@@ -1,0 +1,23 @@
+
+#install pulseaudio-module-bluetooth 
+#pactl load-module module-bluetooth-discover
+systemctl start bluetooth
+
+
+bluetoothctl
+
+$ power on
+$ agent on
+$ scan on
+
+
+Only the first time
+
+$ pair AA:BB:CC:DD:EE:FF
+$ connect AA:BB:CC:DD:EE:FF
+
+
+# scan off when you found your device
+
+scan off
+exit

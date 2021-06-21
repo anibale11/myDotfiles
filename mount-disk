@@ -1,0 +1,4 @@
+Lsblk
+sudo mount /dev/sdaX /media/tmp/
+or
+udisksctl mount -b /dev/sdaX

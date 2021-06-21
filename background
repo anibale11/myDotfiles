@@ -1,0 +1,4 @@
+#!/bin/bash
+feh --randomize --bg-fill /home/anibale/Imágenes/background/*
+compton -b
+udisksctl mount -b /dev/sda1
