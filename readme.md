@@ -1,4 +1,4 @@
-### This is My Linux Configurations Filesi ####
+### This is My Linux Configurations Files ####
 
 
 - Instalar i3 y cp archivo de configuracion en .config/i3/config
