@@ -1,0 +1,40 @@
+#! /bin/bash
+
+# ] ---- AUTOSTART ---- [
+
+sxhkd &
+~/.fehbg
+setxkbmap latam &
+flameshot &
+picom -b &
+nm-applet &
+udisksctl mount --block-device /dev/sda1
+feh --bg-scale /media/anibale/DATA/Imágenes/background/pinguinitos.jpg
+#select random theme
+themes=('blocks' 'colorblocks' 'cuts' 'docky' 'forest' 'grayblocks' 'hack' 'material' 'panels' 'pwidgets' 'shades' 'shapes')
+
+rndm=$((0 + $RANDOM % 11))
+bash ~/.config/polybar/launch.sh --${themes[$rndm]}
+
+#   ] ---- WORKSPACES ---- [ 
+notify-send --urgency=low --app-name=Polybar "Polybar" "Polybar ${themes[$rndm]} launched..."
+
+#bspc monitor -d                           
+#bspc monitor -d  CONSOLE CODE WEB FILES MUSIC CHAT OTHERS     
+
+# ] ---- WINDOW CONFIG ---- [
+
+bspc config border_width         0
+bspc config window_gap         	15
+
+bspc config normal_border_color "#2A2426"
+bspc config focused_border_color "#87AF87"
+
+bspc config split_ratio          0.70
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_follows_pointer true
+
+bspc rule -a brave-browser desktop=^6 follow=on
+bspc rule -a emacs desktop=^3 follow=on
+bspc rule -a spotify desktop=^2 follow=on
